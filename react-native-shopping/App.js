@@ -46,7 +46,7 @@ const Drawer = createDrawerNavigator(
 );
 
 export default function App() {
-    // const Layout = createAppContainer(AppNavigator);
+    //const Layout = createAppContainer(Stack);
     // const Layout = createAppContainer(Tab);
     const Layout = createAppContainer(Drawer);
     return (
