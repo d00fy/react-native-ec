@@ -18,25 +18,29 @@ const Stack = createStackNavigator(
     {
         Stack1: { screen: Stack1 },
         Stack2: { screen: Stack2 },
+        Single1: { screen: Single1 },
+        Single2: { screen: Single2 },
     },
     {
         initialRouteName: 'Stack1',
     }
 );
 
-Tab;
+//Tab
 const Tab = createBottomTabNavigator({
-    Tab1: { screen: Tab1 },
-    Tab2: { screen: Tab2 },
-    // Tab1: { screen: Stack },
+    // Tab1: { screen: Tab1 },
+    // Tab2: { screen: Tab2 },
+    Tab1: { screen: Stack },
     // Tab2: { screen: createStackNavigator({ Tab2: { screen: Tab2 } }) },
+    // Tab1: { screen: createStackNavigator({ Tab1: { screen: Tab1 } }) },
+    Tab2: { screen: createStackNavigator({ Tab2: { screen: Tab2 } }) },
 });
 
 //drawer
 const Drawer = createDrawerNavigator(
     {
-        Stacks: { screen: Stack },
-        Tabs: { screen: Tab },
+        Stacks: { screen: Stack }, //なるほど、入れ子で呼び出せば・・
+        Tabs: { screen: Tab }, //これも。。
         Single1: { screen: Single1 },
         Single2: { screen: Single2 },
     },
@@ -47,10 +51,12 @@ const Drawer = createDrawerNavigator(
 
 export default function App() {
     //const Layout = createAppContainer(Stack);
-    // const Layout = createAppContainer(Tab);
+    //const Layout = createAppContainer(Tab);
     const Layout = createAppContainer(Drawer);
     return (
-        <Layout />
+        <React.Fragment>
+            <Layout />
+        </React.Fragment>
         // <View style={styles.container}>
         //     <Single1 />
         // </View>
