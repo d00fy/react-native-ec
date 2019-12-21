@@ -3,8 +3,11 @@ import { StyleSheet, Text, View } from 'react-native';
 
 import Single1 from './src/screens/Single1';
 import Single2 from './src/screens/Single2';
-import Stack1 from './src/screens/Stack1';
+import Top from './src/screens/Top';
 import Stack2 from './src/screens/Stack2';
+
+//----MemoApp
+import BodyText from './src/elements/BodyText';
 
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
@@ -13,13 +16,13 @@ import { createDrawerNavigator } from 'react-navigation-drawer';
 //stack
 const Stack = createStackNavigator(
     {
-        Stack1: { screen: Stack1 },
+        Top: { screen: Top },
         Stack2: { screen: Stack2 },
         Single1: { screen: Single1 },
         Single2: { screen: Single2 },
     },
     {
-        initialRouteName: 'Stack1',
+        initialRouteName: 'Top',
     }
 );
 
@@ -37,16 +40,8 @@ const Drawer = createDrawerNavigator(
 
 export default function App() {
     //const Layout = createAppContainer(Stack);
-    //const Layout = createAppContainer(Tab);
     const Layout = createAppContainer(Drawer);
-    return (
-        <React.Fragment>
-            <Layout />
-        </React.Fragment>
-        // <View style={styles.container}>
-        //     <Single1 />
-        // </View>
-    );
+    return <Layout />;
 }
 
 const styles = StyleSheet.create({
