@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default class Stack2 extends React.Component {
     static navigationOptions = ({ navigation }) => ({
-        title: 'Stack1',
+        title: 'カート',
         headerRight: (
             <Icon
                 name="bars"

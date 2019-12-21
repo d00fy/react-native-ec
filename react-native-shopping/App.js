@@ -17,9 +17,9 @@ import { createDrawerNavigator } from 'react-navigation-drawer';
 const Stack = createStackNavigator(
     {
         Top: { screen: Top },
-        Stack2: { screen: Stack2 },
-        Single1: { screen: Single1 },
-        Single2: { screen: Single2 },
+        カート: { screen: Stack2 },
+        注文履歴: { screen: Single1 },
+        設定: { screen: Single2 },
     },
     {
         initialRouteName: 'Top',
@@ -29,12 +29,13 @@ const Stack = createStackNavigator(
 //drawer
 const Drawer = createDrawerNavigator(
     {
-        Stacks: { screen: Stack }, //なるほど、入れ子で呼び出せば・・
-        Single1: { screen: Single1 },
-        Single2: { screen: Single2 },
+        トップ: { screen: Stack }, //なるほど、入れ子で呼び出せば・・
+        カート: { screen: Stack2 },
+        注文履歴: { screen: Single1 },
+        設定: { screen: Single2 },
     },
     {
-        initialRouteName: 'Stacks',
+        initialRouteName: 'トップ',
     }
 );
 
