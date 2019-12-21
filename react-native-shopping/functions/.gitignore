@@ -1,0 +1,11 @@
+## Compiled JavaScript files
+**/*.js
+**/*.js.map
+
+# Typescript v1 declaration files
+typings/
+
+node_modules/
+
+src/mangarel-demo-firebase-adminsdk.json
+src/react-native-shopping-firebase-adminsdk.json
